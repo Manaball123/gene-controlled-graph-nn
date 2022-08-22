@@ -1,9 +1,11 @@
 export module Neuron;
-
-
+import <vector>;
+export
 namespace NN
 {
 
+
+	/*
 	namespace CType
 	{
 		enum CType
@@ -13,6 +15,7 @@ namespace NN
 
 		};
 	}
+	*/
 	class Neuron
 	{
 	public:
@@ -33,11 +36,18 @@ namespace NN
 	{
 		
 	public:
-		Neuron* src;
-		Neuron* dst;
-		
-		
+		int src;
+		int dst;
 		double weight;
+		
+		//Reference to neurons table in thet network
+		std::vector<Neuron*>* neurons_ref;
+
+		//Get neuron from table
+		Neuron* GetN(uint index)
+		{
+			return neurons_ref[index]
+		}
 		
 		void Propagate()
 		{
@@ -78,5 +88,5 @@ namespace NN
 		}
 	};
 
-	class 
+	
 }
