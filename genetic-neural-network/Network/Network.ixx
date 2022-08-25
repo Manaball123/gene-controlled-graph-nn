@@ -1,17 +1,32 @@
 export module Network;
 
 import Neuron;
+import Genes;
 import <vector>;
+
 
 namespace NN
 {
-	export 
+	export
 	class Network
 	{
-		Network();
-		~Network();
-		std::vector<Connection*> connections;
+	public:
 
+		std::vector<Connection*> connections;
+		std::vector<Neuron*> neurons;
+		Network()
+		{
+
+		};
+
+		Network(Genes*)
+		{
+
+		}
+		~Network()
+		{
+
+		};
 
 		void Propagate()
 		{

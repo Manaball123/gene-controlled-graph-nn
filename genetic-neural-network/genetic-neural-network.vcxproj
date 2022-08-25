@@ -128,10 +128,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Gene.ixx" />
     <ClCompile Include="genetic-neural-network.cpp" />
-    <ClCompile Include="Network.ixx" />
-    <ClCompile Include="Neuron.ixx" />
+    <ClCompile Include="Network\Genes.ixx" />
+    <ClCompile Include="Network\Network.ixx" />
+    <ClCompile Include="Network\Neuron.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Network\network-defs.hpp" />
+    <ClInclude Include="Utils\typedefs.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

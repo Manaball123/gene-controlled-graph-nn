@@ -1,21 +1,14 @@
 export module Neuron;
 import <vector>;
+import Genes;
+#include "../Utils/typedefs.hpp"
+#include "network-defs.hpp"
+
 export
 namespace NN
 {
 
 
-	/*
-	namespace CType
-	{
-		enum CType
-		{
-			Simple,
-			Hardwired,
-
-		};
-	}
-	*/
 	class Neuron
 	{
 	public:
@@ -23,8 +16,8 @@ namespace NN
 		~Neuron();
 
 		bool PushCache();
-		double currentActivation;
-		double nextActivation;
+		ADType currentActivation;
+		ADType nextActivation;
 
 
 
@@ -36,9 +29,9 @@ namespace NN
 	{
 		
 	public:
-		int src;
-		int dst;
-		double weight;
+		uint src;
+		uint dst;
+		WDType weight;
 		
 		//Reference to neurons table in thet network
 		std::vector<Neuron*>* neurons_ref;
@@ -46,12 +39,21 @@ namespace NN
 		//Get neuron from table
 		Neuron* GetN(uint index)
 		{
-			return neurons_ref[index]
-		}
+			return this->neurons_ref->at(index);
+		};
+		Neuron* GetSrc()
+		{
+			return GetN(this->src);
+		};
+
+		Neuron* GetDst()
+		{
+			return GetN(this->dst);
+		};
 		
 		void Propagate()
 		{
-			this->dst->nextActivation += this->src->currentActivation * this->weight;
+			this->GetDst()->nextActivation += this->GetSrc()->currentActivation * this->weight;
 		};
 		
 		virtual void BackProp();
@@ -62,7 +64,7 @@ namespace NN
 	{
 	public:
 		//Weight for backpropagation
-		double backWeight;
+		WDType backWeight;
 		void BackProp()
 		{
 
@@ -71,7 +73,7 @@ namespace NN
 			//dy/dx lmao
 
 			//also im thinking of caching src activation * weight idk
-			this->weight += this->backWeight * (this->dst->nextActivation / (this->src->currentActivation * this->weight));
+			this->weight += this->backWeight * (this->GetDst()->nextActivation / (this->GetSrc()->currentActivation * this->weight));
 			return;
 		}
 	};

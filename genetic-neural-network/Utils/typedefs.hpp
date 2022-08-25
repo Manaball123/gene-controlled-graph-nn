@@ -40,10 +40,11 @@ namespace ERR
 		MALLOC_FAIL,
 		STREAM_CLOSED,
 
-		//World errors
-		ALREADY_TICKED
+
 	};
 }
+
+
 
 
 #endif

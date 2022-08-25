@@ -16,19 +16,30 @@
     <Filter Include="Source Files\Network">
       <UniqueIdentifier>{11aa5c8d-d751-4ed1-9462-6d912c9d9ae5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{62629cf3-80de-4b07-a679-78dd2a52b8ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="genetic-neural-network.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Network.ixx">
+    <ClCompile Include="Network\Network.ixx">
       <Filter>Source Files\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Gene.ixx">
+    <ClCompile Include="Network\Genes.ixx">
       <Filter>Source Files\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Neuron.ixx">
+    <ClCompile Include="Network\Neuron.ixx">
       <Filter>Source Files\Network</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils\typedefs.hpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\network-defs.hpp">
+      <Filter>Source Files\Network</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
