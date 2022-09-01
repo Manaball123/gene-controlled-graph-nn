@@ -5,7 +5,7 @@
 
 #ifndef __NETWORK_DEFS__
 
-#define __NETWORK__DEFS__
+#define __NETWORK_DEFS__
 
 
 namespace NN

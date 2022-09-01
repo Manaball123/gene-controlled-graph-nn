@@ -1,14 +1,41 @@
-export module Neuron;
-import <vector>;
-import Genes;
-#include "../Utils/typedefs.hpp"
-#include "network-defs.hpp"
+#pragma once
 
-export
+
+#include "network-defs.hpp"
+#include "genes.hpp"
+#include <vector>
+
+
 namespace NN
 {
+	
+	class Network
+	{
+	public:
+
+		std::vector<Connection*> connections;
+		std::vector<Neuron*> neurons;
+		Network();
 
 
+		Network(Genes*);
+
+		~Network();
+
+
+		void Propagate()
+		{
+			for (int i = 0; i < this->connections.size(); i++)
+			{
+
+			}
+		}
+
+		void BackPropagate()
+		{
+
+		}
+	};
 	class Neuron
 	{
 	public:
@@ -27,12 +54,12 @@ namespace NN
 
 	class Connection
 	{
-		
+
 	public:
 		uint src;
 		uint dst;
 		WDType weight;
-		
+
 		//Reference to neurons table in thet network
 		std::vector<Neuron*>* neurons_ref;
 
@@ -50,12 +77,12 @@ namespace NN
 		{
 			return GetN(this->dst);
 		};
-		
+
 		void Propagate()
 		{
 			this->GetDst()->nextActivation += this->GetSrc()->currentActivation * this->weight;
 		};
-		
+
 		virtual void BackProp();
 	};
 
@@ -89,6 +116,4 @@ namespace NN
 			return;
 		}
 	};
-
-	
 }
