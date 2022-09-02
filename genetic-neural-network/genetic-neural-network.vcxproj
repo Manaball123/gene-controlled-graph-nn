@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,12 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="genetic-neural-network.cpp" />
-    <ClCompile Include="Network\Genes.ixx" />
-    <ClCompile Include="Network\Network.ixx" />
-    <ClCompile Include="Network\Neuron.ixx" />
+    <ClCompile Include="Network\genes.cpp" />
+    <ClCompile Include="Network\network.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Network\genes.hpp" />
     <ClInclude Include="Network\network-defs.hpp" />
+    <ClInclude Include="Network\network.hpp" />
     <ClInclude Include="Utils\typedefs.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

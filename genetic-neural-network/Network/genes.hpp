@@ -1,7 +1,7 @@
-export module Genes;
+#pragma once
 
-import <cstdlib>;
-import <random>;
+#include <cstdlib>;
+#include <random>;
 #include "../Utils/typedefs.hpp"
 #include "network-defs.hpp"
 
@@ -10,9 +10,10 @@ import <random>;
 #define INPUT_NEURONS 8
 #define OUTPUT_NEURONS 5
 
-#define MIN_WEIGHT -1.0
-#define MAX_WEIGHT 1.0
-
+#define INIT_WEIGHT_OFFSET 1.0
+#define MUTATE_WEIGHT_OFFSET 0.2
+//probability of mode randomization
+#define PROB_MODE_RAND 1/10000
 //probability of address randomization
 #define PROB_ADDR_RAND 1/1000
 //probability of weight randomization
@@ -32,23 +33,32 @@ namespace NN
 	//A single gene
 	class Gene
 	{
+		void RandMode();
+
+		void RandSrc();
+
+		void RandDst();
+
+		void RandWeight(WDType offset, WDType base = 0.0);
+
+		void RandBackWeight(WDType offset, WDType base = 0.0);
+
+
 	public:
 		int mode;
 		uint src;
 		uint dst;
 		ADType weight;
-		WDType backweight;
+		WDType backWeight;
 
-		Gene()
-		{
-			this->mode = rand() % 2;
-			this->src = (rand() % (NEURONS_NUM - INPUT_NEURONS)) + INPUT_NEURONS;
-			this->dst = rand() % (NEURONS_NUM - OUTPUT_NEURONS);
-			
-			this->weight = InitRandW();
-		}
+
+
+		Gene();
+
+		void Mutate();
+
 	};
-	export
+	
 	class Genes
 	{
 		//Genes header, do not mutate

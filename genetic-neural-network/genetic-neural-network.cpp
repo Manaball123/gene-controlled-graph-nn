@@ -2,16 +2,16 @@
 //
 
 #include <iostream>
-import Network;
+#include "network/network-defs.hpp"
 
 
 
 using namespace NN;
 int main()
 {
-    std::cout << "Hello World!\n";
+    
 
-    Network mynet = Network();
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

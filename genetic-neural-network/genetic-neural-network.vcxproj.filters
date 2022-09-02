@@ -13,10 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Network">
+    <Filter Include="Source Files\network">
       <UniqueIdentifier>{11aa5c8d-d751-4ed1-9462-6d912c9d9ae5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Utils">
+    <Filter Include="Source Files\utils">
       <UniqueIdentifier>{62629cf3-80de-4b07-a679-78dd2a52b8ba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -24,22 +24,25 @@
     <ClCompile Include="genetic-neural-network.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Network\Network.ixx">
-      <Filter>Source Files\Network</Filter>
+    <ClCompile Include="Network\genes.cpp">
+      <Filter>Source Files\network</Filter>
     </ClCompile>
-    <ClCompile Include="Network\Genes.ixx">
-      <Filter>Source Files\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Network\Neuron.ixx">
-      <Filter>Source Files\Network</Filter>
+    <ClCompile Include="Network\network.cpp">
+      <Filter>Source Files\network</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\typedefs.hpp">
-      <Filter>Source Files\Utils</Filter>
+      <Filter>Source Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="Network\network-defs.hpp">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Source Files\network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\network.hpp">
+      <Filter>Source Files\network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\genes.hpp">
+      <Filter>Source Files\network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

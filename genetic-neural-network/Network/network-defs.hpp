@@ -8,6 +8,8 @@
 #define __NETWORK_DEFS__
 
 
+#include <stdlib.h>
+
 namespace NN
 {
 	namespace CType
@@ -27,7 +29,24 @@ namespace NN
 	template<class dtype> 
 	dtype RandVal(dtype min, dtype max)
 	{
-		(((dtype)rand() / (dtype)RAND_MAX) * (max - min)) + min;
+		return (((dtype)rand() / (dtype)RAND_MAX) * (max - min)) + min;
 	}
+
+
+	WDType RandW(WDType min, WDType max)
+	{
+		return RandVal<WDType>(min, max);
+	}
+
+	bool DoMutation(double probability)
+	{
+		if (probability >= RandVal<double>(0.0, 1.0))
+		{
+			return true;
+		}
+		return false;
+	}
+		
+	
 }
-#endif // !__NETWORK_ENUMS__
+#endif 
