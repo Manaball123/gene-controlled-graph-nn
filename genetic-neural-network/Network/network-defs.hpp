@@ -26,6 +26,7 @@ namespace NN
 	using ADType = double;
 	using WDType = double;
 
+	
 	template<class dtype> 
 	dtype RandVal(dtype min, dtype max)
 	{
@@ -33,12 +34,12 @@ namespace NN
 	}
 
 
-	WDType RandW(WDType min, WDType max)
+	inline WDType RandW(WDType min, WDType max)
 	{
 		return RandVal<WDType>(min, max);
 	}
 
-	bool DoMutation(double probability)
+	inline bool DoMutation(double probability)
 	{
 		if (probability >= RandVal<double>(0.0, 1.0))
 		{
