@@ -59,7 +59,8 @@ namespace NN
 		//ir range: 0-1
 		//or range: 7-9
 
-	
+		void Init();
+		void Mutate();
 		Gene genes[GENES_SIZE];
 		
 

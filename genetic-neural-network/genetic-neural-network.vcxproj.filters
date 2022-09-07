@@ -19,6 +19,9 @@
     <Filter Include="Source Files\utils">
       <UniqueIdentifier>{62629cf3-80de-4b07-a679-78dd2a52b8ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\simulation">
+      <UniqueIdentifier>{15c476c6-20d1-4eb8-9670-dcf38bb106c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -84,3 +84,20 @@ void Gene::Mutate()
 	}
 
 }
+
+//randomly initialize genes
+void Genes::Init()
+{
+	for (uint i = 0; i < GENES_SIZE; i++)
+	{
+		genes[i] = Gene();
+	}
+}
+
+void Genes::Mutate()
+{
+	for (uint i = 0; i < GENES_SIZE; i++)
+	{
+		genes[i].Mutate();
+	}
+}

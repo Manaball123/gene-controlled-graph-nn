@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 //Gene definitions
-#define GENES_SIZE 4
+#define GENES_SIZE 256
 
 #define INPUT_NEURONS 8
 #define OUTPUT_NEURONS 5
