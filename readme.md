@@ -1,9 +1,9 @@
 # tldr 
-iterations of network are constructed by genes that are set at beginning of iteration 
-weights of network are changed during the iteration to mimick learning(changes are gene dependent) 
-after each iteration good genes stay and bad genes go bye bye 
-the network is a graph, which makes it hard to analyze but its closer to the human brain architecture so 
-make agi commit mass genocide etc etc 
+iterations of network are constructed by genes that are set at beginning of iteration  
+weights of network are changed during the iteration to mimick learning(changes are gene dependent)  
+after each iteration good genes stay and bad genes go bye bye  
+the network is a graph, which makes it hard to analyze but its closer to the human brain architecture so  
+make agi commit mass genocide etc etc  
 
 
 # wtf is in this thing
