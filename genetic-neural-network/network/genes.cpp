@@ -21,12 +21,12 @@ void Gene::RandDst()
 	this->dst = rand() % (NEURONS_NUM - OUTPUT_NEURONS);
 }
 
-void Gene::RandWeight(WDType offset, WDType base)
+void Gene::RandWeight(weight_t offset, weight_t base)
 {
 	this->weight = RandW(base - offset, base + offset);
 }
 
-void Gene::RandBackWeight(WDType offset, WDType base)
+void Gene::RandBackWeight(weight_t offset, weight_t base)
 {
 	this->backWeight = RandW(base - offset, base + offset);
 }

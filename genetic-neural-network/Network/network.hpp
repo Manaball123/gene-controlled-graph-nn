@@ -49,20 +49,37 @@ namespace NN
 	class Network
 	{
 	public:
-
+		
 		std::vector<Connection*> connections;
 		std::vector<Neuron*> neurons;
+
+		//call on network creation
+		inline void InitializeVectors()
+		{
+			connections.resize(CONNECTIONS_SIZE);
+			neurons.resize(NEURONS_SIZE);
+			for (auto it : neurons)
+			{
+				it = new Neuron();
+			}
+
+			for (auto it = connections.begin(); it != connections.end(); it++)
+			{
+				it = new 
+			}
+		}
+		
 		Network();
 
 
 		Network(Genes*);
 
-		~Network();
+		//~Network();
 
 
 		void Propagate()
 		{
-			for (int i = 0; i < this->connections.size(); i++)
+			for (int i = 0; i < connections.size(); i++)
 			{
 
 			}

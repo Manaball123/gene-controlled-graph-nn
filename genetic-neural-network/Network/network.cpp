@@ -9,6 +9,25 @@
 using namespace NN;
 
 
+Network::Network()
+{
+
+}
+
+Network::Network(Genes*)
+{
+	//expand vectors first
+
+	for (int i = 0; i < CONNECTIONS_SIZE; i++)
+	{
+		//Create a connection for each gene
+		
+
+		
+	}
+}
+
+
 
 void Neuron::PushCache()
 {
