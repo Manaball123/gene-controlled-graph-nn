@@ -3,6 +3,7 @@
 #include "network.hpp"
 
 
+
 //Network 
 
 
@@ -14,63 +15,60 @@ Network::Network()
 
 }
 
-Network::Network(Genes*)
+Network::Network(Genes* genes)
 {
+	InitializeVectors();
 	//expand vectors first
 
 	for (int i = 0; i < CONNECTIONS_SIZE; i++)
 	{
 		//Create a connection for each gene
+		Gene* currentGene = &genes->genes[i];
+		switch (currentGene->mode) {
+		case CType::Simple:
+			SimpleC(currentGene, &neurons);
+			break;
+		case CType::Hardwired:
+			HardwiredC(currentGene, &neurons);
+			break;
+		}
 		
-
 		
 	}
 }
 
 
-
-void Neuron::PushCache()
+//Deallocate objects in vectors
+Network::~Network()
 {
-	currentActivation = nextActivation;
+	for (auto it : neurons)
+	{
+		delete it;
+	}
+	for (auto it : connections)
+	{
+		delete it;
+	}
 }
 
-//Connection base class
-
-//Get neuron from table
-Neuron* Connection::GetN(uint index)
+void Network::Propagate()
 {
-	return neurons_ref->at(index);
-};
-Neuron* Connection::GetSrc()
-{
-	return GetN(src);
-};
 
-Neuron* Connection::GetDst()
-{
-	return GetN(dst);
-};
-
-void Connection::Propagate()
-{
-	GetDst()->nextActivation += GetSrc()->currentActivation * weight;
-};
-
-
-
-
-//Connection derivative classes
-void SimpleC::BackProp()
-{
-	//some placeholder ish thing here, there could be a proper algorithm but im doing this for now
-	//dy/dx lmao
-
-	//also im thinking of caching src activation * weight idk
-	weight += backWeight * (GetDst()->nextActivation / (GetSrc()->currentActivation * weight));
-	return;
+	//Forward propagate
+	for (auto it : connections)
+	{
+		it->Propagate();
+	}
+	//Back propagate
+	for (auto it : connections)
+	{
+		it->BackProp();
+	}
+	//Push neurons cached activation
+	for (auto it : neurons)
+	{
+		it->PushCache();
+	}
 }
 
-void HardwiredC::BackProp()
-{
-	return;
-}
+

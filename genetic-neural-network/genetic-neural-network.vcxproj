@@ -129,13 +129,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="network\connection.cpp" />
     <ClCompile Include="Network\genes.cpp" />
     <ClCompile Include="Network\network.cpp" />
+    <ClCompile Include="network\neuron.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="network\connection.hpp" />
     <ClInclude Include="Network\genes.hpp" />
     <ClInclude Include="Network\network-defs.hpp" />
     <ClInclude Include="Network\network.hpp" />
+    <ClInclude Include="network\neuron.hpp" />
     <ClInclude Include="Utils\typedefs.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

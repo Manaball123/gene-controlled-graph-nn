@@ -43,6 +43,7 @@ namespace NN
 	
 	class Genes
 	{
+	public:
 		//Genes header, do not mutate
 		//Total number of neurons
 		static const uint neuronN;
@@ -56,6 +57,7 @@ namespace NN
 		//ir range: 0-1
 		//or range: 7-9
 
+	
 		Gene genes[GENES_SIZE];
 		
 

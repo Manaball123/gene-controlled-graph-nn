@@ -2,48 +2,17 @@
 
 
 #include "network-defs.hpp"
+#include "connection.hpp"
 #include "genes.hpp"
+#include "neuron.hpp"
 #include <vector>
+
+
 
 
 namespace NN
 {
 
-	class Neuron
-	{
-	public:
-		Neuron();
-		~Neuron();
-
-		void PushCache();
-		activation_t currentActivation;
-		activation_t nextActivation;
-
-
-	};
-
-
-	class Connection
-	{
-
-	public:
-		uint src;
-		uint dst;
-		weight_t weight;
-
-		//Reference to neurons table in thet network
-		std::vector<Neuron*>* neurons_ref;
-
-		//Get neuron from table
-		Neuron* GetN(uint index);
-		Neuron* GetSrc();
-
-		Neuron* GetDst();
-
-		void Propagate();
-
-		virtual void BackProp();
-	};
 
 
 	class Network
@@ -54,6 +23,8 @@ namespace NN
 		std::vector<Neuron*> neurons;
 
 		//call on network creation
+		//Resizes the vectors and initializes neurons
+		//Note that the connections still have to be constructed
 		inline void InitializeVectors()
 		{
 			connections.resize(CONNECTIONS_SIZE);
@@ -63,48 +34,22 @@ namespace NN
 				it = new Neuron();
 			}
 
-			for (auto it = connections.begin(); it != connections.end(); it++)
-			{
-				it = new 
-			}
 		}
 		
 		Network();
+		~Network();
 
 
 		Network(Genes*);
 
 		//~Network();
 
+		//Does a forward and backwards propagation for all connections and pushes the cached activations
+		void Propagate();
 
-		void Propagate()
-		{
-			for (int i = 0; i < connections.size(); i++)
-			{
-
-			}
-		}
-
-		void BackPropagate()
-		{
-
-		}
-	};
-
-	
-	class SimpleC : public Connection
-	{
-	public:
-		//Weight for backpropagation
-		weight_t backWeight;
-		void BackProp();
+		//void BackPropagate();
 	};
 
 
-	class HardwiredC : public Connection
-	{
-	public:
-		void BackProp();
 
-	};
 }

@@ -30,6 +30,12 @@
     <ClCompile Include="Network\network.cpp">
       <Filter>Source Files\network</Filter>
     </ClCompile>
+    <ClCompile Include="network\connection.cpp">
+      <Filter>Source Files\network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\neuron.cpp">
+      <Filter>Source Files\network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\typedefs.hpp">
@@ -42,6 +48,12 @@
       <Filter>Source Files\network</Filter>
     </ClInclude>
     <ClInclude Include="Network\genes.hpp">
+      <Filter>Source Files\network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\connection.hpp">
+      <Filter>Source Files\network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\neuron.hpp">
       <Filter>Source Files\network</Filter>
     </ClInclude>
   </ItemGroup>
