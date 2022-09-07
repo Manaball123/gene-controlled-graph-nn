@@ -37,6 +37,8 @@ namespace NN
 
 		Gene();
 
+		Gene(int mode, uint src, uint dst, weight_t weight, weight_t backWeight);
+
 		void Mutate();
 
 	};

@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 //Gene definitions
-#define GENES_SIZE 1024
+#define GENES_SIZE 4
 
 #define INPUT_NEURONS 8
 #define OUTPUT_NEURONS 5
@@ -24,6 +24,8 @@
 #define PROB_ADDR_RAND 1/1000
 //probability of weight randomization
 #define PROB_WGT_RAND 1/10
+
+
 
 //min multiplier
 //0.25-> currentweight * 0.75 ~ 1.25

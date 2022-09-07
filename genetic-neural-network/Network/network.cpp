@@ -19,19 +19,23 @@ Network::Network(Genes* genes)
 {
 	InitializeVectors();
 	//expand vectors first
-
+	
 	for (int i = 0; i < CONNECTIONS_SIZE; i++)
 	{
+		Connection* newc_ptr;
 		//Create a connection for each gene
 		Gene* currentGene = &genes->genes[i];
 		switch (currentGene->mode) {
 		case CType::Simple:
-			SimpleC(currentGene, &neurons);
+			newc_ptr = new SimpleC(currentGene, &neurons);
 			break;
 		case CType::Hardwired:
-			HardwiredC(currentGene, &neurons);
+			newc_ptr = new HardwiredC(currentGene, &neurons);
 			break;
+		default:
+			newc_ptr = nullptr;
 		}
+		connections[i] = newc_ptr;
 		
 		
 	}

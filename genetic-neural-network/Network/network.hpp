@@ -29,9 +29,9 @@ namespace NN
 		{
 			connections.resize(CONNECTIONS_SIZE);
 			neurons.resize(NEURONS_SIZE);
-			for (auto it : neurons)
+			for (uint i = 0; i < neurons.size(); i++)
 			{
-				it = new Neuron();
+				neurons[i] = new Neuron();
 			}
 
 		}

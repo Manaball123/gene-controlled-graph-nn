@@ -43,6 +43,15 @@ Gene::Gene()
 
 }
 
+Gene::Gene(int mode, uint src, uint dst, weight_t weight, weight_t backWeight)
+{
+	this->mode = mode;
+	this->src = src;
+	this->dst = dst;
+	this->weight = weight;
+	this->backWeight = backWeight;
+}
+
 
 void Gene::Mutate()
 {
