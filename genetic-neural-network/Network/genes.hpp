@@ -39,17 +39,17 @@ namespace NN
 
 		void RandDst();
 
-		void RandWeight(WDType offset, WDType base = 0.0);
+		void RandWeight(weight_t offset, weight_t base = 0.0);
 
-		void RandBackWeight(WDType offset, WDType base = 0.0);
+		void RandBackWeight(weight_t offset, weight_t base = 0.0);
 
 
 	public:
 		int mode;
 		uint src;
 		uint dst;
-		ADType weight;
-		WDType backWeight;
+		weight_t weight;
+		weight_t backWeight;
 
 
 

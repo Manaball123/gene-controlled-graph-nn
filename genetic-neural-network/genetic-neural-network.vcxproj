@@ -128,7 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="genetic-neural-network.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Network\genes.cpp" />
     <ClCompile Include="Network\network.cpp" />
   </ItemGroup>

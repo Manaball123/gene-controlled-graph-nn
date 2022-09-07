@@ -23,8 +23,8 @@ namespace NN
 	};
 
 	//Data type used for activation
-	using ADType = double;
-	using WDType = double;
+	using activation_t = double;
+	using weight_t = double;
 
 	
 	template<class dtype> 
@@ -34,9 +34,9 @@ namespace NN
 	}
 
 
-	inline WDType RandW(WDType min, WDType max)
+	inline weight_t RandW(weight_t min, weight_t max)
 	{
-		return RandVal<WDType>(min, max);
+		return RandVal<weight_t>(min, max);
 	}
 
 	inline bool DoMutation(double probability)
