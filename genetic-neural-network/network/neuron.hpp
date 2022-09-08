@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "network-defs.hpp"
+#include "network_defs.hpp"
 namespace NN
 {
 	class Neuron

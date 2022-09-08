@@ -133,13 +133,18 @@
     <ClCompile Include="Network\genes.cpp" />
     <ClCompile Include="Network\network.cpp" />
     <ClCompile Include="network\neuron.cpp" />
+    <ClCompile Include="utils\console_renderer.cpp" />
+    <ClCompile Include="utils\network_visualization.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="network\connection.hpp" />
     <ClInclude Include="Network\genes.hpp" />
-    <ClInclude Include="Network\network-defs.hpp" />
+    <ClInclude Include="Network\network_defs.hpp" />
     <ClInclude Include="Network\network.hpp" />
     <ClInclude Include="network\neuron.hpp" />
+    <ClInclude Include="utils\console_renderer.hpp" />
+    <ClInclude Include="utils\matrix.hpp" />
+    <ClInclude Include="utils\network_visualization.hpp" />
     <ClInclude Include="Utils\typedefs.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

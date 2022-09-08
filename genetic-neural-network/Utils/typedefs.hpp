@@ -25,7 +25,7 @@ using uint = unsigned __int32;
 using uint32 = unsigned __int32;
 
 
-//ik long isnt actually 64 bits in length but whatever, doesnt make sense for int to be same as int anyway
+//ik long isnt actually 64 bits in length but whatever, doesnt make sense for long to be same as int anyway
 using ulong = unsigned __int64;
 using uint64 = unsigned __int64;
 

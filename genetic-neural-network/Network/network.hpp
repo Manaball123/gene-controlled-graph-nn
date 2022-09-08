@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "network-defs.hpp"
+#include "network_defs.hpp"
 #include "connection.hpp"
 #include "genes.hpp"
 #include "neuron.hpp"
@@ -12,8 +12,6 @@
 
 namespace NN
 {
-
-
 
 	class Network
 	{

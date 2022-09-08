@@ -57,6 +57,10 @@ void SimpleC::BackProp()
 	//dy/dx lmao
 
 	//also im thinking of caching src activation * weight idk
+	if (GetSrc()->currentActivation == 0)
+	{
+		return;
+	}
 	weight += backWeight * (GetDst()->nextActivation / (GetSrc()->currentActivation * weight));
 	return;
 }

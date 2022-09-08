@@ -1,63 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="include">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="include\network">
+      <UniqueIdentifier>{f4d45d7d-6ea0-4499-ab7c-573903e685a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\network">
+    <Filter Include="include\simulation">
+      <UniqueIdentifier>{18c4bbf0-18a0-414b-94a7-5c4d061773f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\utils">
+      <UniqueIdentifier>{f8d386b9-690c-456b-82cd-55a1d57397ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\network">
       <UniqueIdentifier>{11aa5c8d-d751-4ed1-9462-6d912c9d9ae5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\utils">
+    <Filter Include="src\utils">
       <UniqueIdentifier>{62629cf3-80de-4b07-a679-78dd2a52b8ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\simulation">
+    <Filter Include="src\simulation">
       <UniqueIdentifier>{15c476c6-20d1-4eb8-9670-dcf38bb106c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="Network\genes.cpp">
-      <Filter>Source Files\network</Filter>
+      <Filter>src\network</Filter>
     </ClCompile>
     <ClCompile Include="Network\network.cpp">
-      <Filter>Source Files\network</Filter>
+      <Filter>src\network</Filter>
     </ClCompile>
     <ClCompile Include="network\connection.cpp">
-      <Filter>Source Files\network</Filter>
+      <Filter>src\network</Filter>
     </ClCompile>
     <ClCompile Include="network\neuron.cpp">
-      <Filter>Source Files\network</Filter>
+      <Filter>src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\network_visualization.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\console_renderer.cpp">
+      <Filter>src\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="utils\console_renderer.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\network_visualization.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
     <ClInclude Include="Utils\typedefs.hpp">
-      <Filter>Source Files\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Network\network-defs.hpp">
-      <Filter>Source Files\network</Filter>
-    </ClInclude>
-    <ClInclude Include="Network\network.hpp">
-      <Filter>Source Files\network</Filter>
-    </ClInclude>
-    <ClInclude Include="Network\genes.hpp">
-      <Filter>Source Files\network</Filter>
-    </ClInclude>
-    <ClInclude Include="network\connection.hpp">
-      <Filter>Source Files\network</Filter>
+      <Filter>include\utils</Filter>
     </ClInclude>
     <ClInclude Include="network\neuron.hpp">
-      <Filter>Source Files\network</Filter>
+      <Filter>include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\network_defs.hpp">
+      <Filter>include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\network.hpp">
+      <Filter>include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\genes.hpp">
+      <Filter>include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\connection.hpp">
+      <Filter>include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\matrix.hpp">
+      <Filter>include\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

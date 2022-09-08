@@ -3,7 +3,7 @@
 #include <cstdlib>;
 #include <random>;
 #include "../Utils/typedefs.hpp"
-#include "network-defs.hpp"
+#include "network_defs.hpp"
 
 
 

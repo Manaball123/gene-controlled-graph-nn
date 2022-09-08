@@ -9,9 +9,10 @@
 
 
 #include <stdlib.h>
+#include <math.h>
 
 //Gene definitions
-#define GENES_SIZE 256
+#define GENES_SIZE 1024
 
 #define INPUT_NEURONS 8
 #define OUTPUT_NEURONS 5
@@ -60,7 +61,10 @@ namespace NN
 		return (((dtype)rand() / (dtype)RAND_MAX) * (max - min)) + min;
 	}
 
-	
+	inline activation_t Signal(activation_t activation)
+	{
+		return tanh(activation);
+	}
 	inline weight_t RandW(weight_t min, weight_t max)
 	{
 		return RandVal<weight_t>(min, max);

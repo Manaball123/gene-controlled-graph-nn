@@ -13,5 +13,6 @@ Neuron::Neuron()
 
 void Neuron::PushCache()
 {
-	currentActivation = nextActivation;
+	currentActivation = Signal(nextActivation);
+
 }
