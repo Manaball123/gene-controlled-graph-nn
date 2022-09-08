@@ -13,12 +13,14 @@ void Gene::RandMode()
 
 void Gene::RandSrc()
 {
-	this->src = (rand() % (NEURONS_SIZE - INPUT_NEURONS)) + INPUT_NEURONS;
+	//dont use output neurons as source
+	this->src = rand() % (NEURONS_SIZE - OUTPUT_NEURONS);
 }
 
 void Gene::RandDst()
 {
-	this->dst = rand() % (NEURONS_SIZE - OUTPUT_NEURONS);
+	//dont use input neurons as dst
+	this->dst = (rand() % (NEURONS_SIZE - INPUT_NEURONS)) + INPUT_NEURONS;
 }
 
 void Gene::RandWeight(weight_t offset, weight_t base)
