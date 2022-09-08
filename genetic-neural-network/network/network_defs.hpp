@@ -12,7 +12,7 @@
 #include <math.h>
 
 //Gene definitions
-#define GENES_SIZE 1024
+#define GENES_SIZE 65536
 
 #define INPUT_NEURONS 8
 #define OUTPUT_NEURONS 5
@@ -35,7 +35,7 @@
 
 
 //Other network defs
-#define NEURONS_SIZE 64
+#define NEURONS_SIZE 256
 #define CONNECTIONS_SIZE GENES_SIZE
 
 namespace NN

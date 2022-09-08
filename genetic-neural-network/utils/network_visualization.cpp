@@ -1,4 +1,5 @@
 #include "network_visualization.hpp"
+#include <math.h>
 //#include "../network/neuron.hpp"
 
 using namespace NNVis;
@@ -7,7 +8,8 @@ using namespace NNVis;
 NetworkVisualizer::NetworkVisualizer(NN::Network* network_ptr)
 {
 	this->network_ptr = network_ptr;
-	renderer = CLIRenderer::CRenderer(8, 8);
+	uint32 sqrtSize = std::round(std::pow(NEURONS_SIZE, 0.5));
+	renderer = CLIRenderer::CRenderer(sqrtSize, sqrtSize);
 }
 
 void NetworkVisualizer::Render()

@@ -22,11 +22,23 @@ int main()
     NetworkVisualizer v1(&net1);
     net1.neurons[0]->currentActivation = 1.0;
     //net1.neurons[32]->currentActivation = 1.0;
+    bool activate = 0;
     
     while (1)
     {
         std::cin.get();
-        net1.neurons[0]->currentActivation = 1.0;
+        if (activate)
+        {
+            activate = 0;
+            net1.neurons[0]->currentActivation = 1.0;
+            net1.neurons[2]->currentActivation = 1.0;
+            net1.neurons[4]->currentActivation = 1.0;
+        }
+        else
+        {
+            activate = 1;
+        }
+        //net1.neurons[0]->currentActivation = 1.0;
         
         v1.Render();
         net1.Propagate();
