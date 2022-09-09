@@ -12,7 +12,7 @@
 #include <math.h>
 
 //Gene definitions
-#define GENES_SIZE 65536
+#define GENES_SIZE 16384
 
 #define INPUT_NEURONS 8
 #define OUTPUT_NEURONS 5
@@ -64,6 +64,10 @@ namespace NN
 	inline activation_t Signal(activation_t activation)
 	{
 		return tanh(activation);
+	}
+	inline activation_t SignalDerivative(activation_t activation)
+	{
+		return 1.0 - pow(tanh(activation), 2.0);
 	}
 	inline weight_t RandW(weight_t min, weight_t max)
 	{

@@ -13,6 +13,22 @@ using namespace NN;
 using namespace NNVis;
 
 
+
+void memleakTest()
+{
+    Network nets[100];
+    for (int i = 0; i < 100; i++)
+    {
+        Genes* genes = new Genes();
+        nets[i] = Network(genes);
+        delete genes;
+
+
+    };
+
+    std::cin.get();
+}
+
 int main()
 {
     Genes* genes = new Genes();
@@ -23,9 +39,11 @@ int main()
     net1.neurons[0]->currentActivation = 1.0;
     //net1.neurons[32]->currentActivation = 1.0;
     bool activate = 0;
-    
+
+    memleakTest();
     while (1)
     {
+
         std::cin.get();
         if (activate)
         {
@@ -38,6 +56,7 @@ int main()
         {
             activate = 1;
         }
+
         //net1.neurons[0]->currentActivation = 1.0;
         
         v1.Render();

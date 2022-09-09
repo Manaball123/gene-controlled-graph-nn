@@ -61,7 +61,13 @@ void SimpleC::BackProp()
 	{
 		return;
 	}
-	weight += backWeight * (GetDst()->nextActivation / (GetSrc()->currentActivation * weight));
+	//derivative of resultant dst activation = dsig(sum)
+	//derivative of sum = src activation * weight
+	weight -= backWeight * ( 
+		//dy (this is actually the intermediate du but whatever
+		SignalDerivative(GetDst()->nextActivation)
+		//divided by dx
+		/ (GetSrc()->currentActivation * weight));
 	return;
 }
 

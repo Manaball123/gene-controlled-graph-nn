@@ -45,13 +45,14 @@ Network::Network(Genes* genes)
 //Deallocate objects in vectors
 Network::~Network()
 {
-	for (auto it : neurons)
+
+	for (uint i = 0; i < NEURONS_SIZE; i++)
 	{
-		delete it;
+		delete neurons[i];
 	}
-	for (auto it : connections)
+	for (uint i = 0; i < CONNECTIONS_SIZE; i++)
 	{
-		delete it;
+		delete connections[i];
 	}
 }
 
