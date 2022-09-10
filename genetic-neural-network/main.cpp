@@ -31,6 +31,7 @@ void memleakTest()
 
 int main()
 {
+
     Genes* genes = new Genes();
 
     Network net1 = Network(genes);

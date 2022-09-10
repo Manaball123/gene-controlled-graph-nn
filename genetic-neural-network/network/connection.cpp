@@ -6,58 +6,58 @@
 using namespace NN;
 //Connection base class
 
-Connection::Connection(Gene* gene, std::vector<Neuron*>* neuronsRef)
+Connection::Connection(Gene* gene)
 {
 	weight = gene->weight;
 	src = gene->src;
 	dst = gene->dst;
-	neurons_ref = neuronsRef;
+	//neurons_ref = neuronsRef;
 
 }
 
-void Connection::BackProp()
+void Connection::BackProp(std::vector<Neuron*>* neurons_ref)
 {
 	return;
 }
 
 //Get neuron from table
-Neuron* Connection::GetN(uint index)
+Neuron* Connection::GetN(std::vector<Neuron*>* neurons_ref, uint index)
 {
 	return neurons_ref->at(index);
 };
-Neuron* Connection::GetSrc()
+Neuron* Connection::GetSrc(std::vector<Neuron*>* neurons_ref)
 {
-	return GetN(src);
+	return GetN(neurons_ref, src);
 };
 
-Neuron* Connection::GetDst()
+Neuron* Connection::GetDst(std::vector<Neuron*>* neurons_ref)
 {
-	return GetN(dst);
+	return GetN(neurons_ref, dst);
 };
 
-void Connection::Propagate()
+void Connection::Propagate(std::vector<Neuron*>* neurons_ref)
 {
-	GetDst()->nextActivation += GetSrc()->currentActivation * weight;
+	GetDst(neurons_ref)->nextActivation += GetSrc(neurons_ref)->currentActivation * weight;
 };
 
-SimpleC::SimpleC(Gene* gene, std::vector<Neuron*>* neuronsRef) : Connection(gene, neuronsRef)
+SimpleC::SimpleC(Gene* gene) : Connection(gene)
 {
 	backWeight = gene->backWeight;
 }
 
-HardwiredC::HardwiredC(Gene* gene, std::vector<Neuron*>* neuronsRef) : Connection(gene, neuronsRef)
+HardwiredC::HardwiredC(Gene* gene) : Connection(gene)
 {
 	//nothing lol
 }
 
 //Connection derivative classes
-void SimpleC::BackProp()
+void SimpleC::BackProp(std::vector<Neuron*>* neurons_ref)
 {
 	//some placeholder ish thing here, there could be a proper algorithm but im doing this for now
 	//dy/dx lmao
 
 	//also im thinking of caching src activation * weight idk
-	if (GetSrc()->currentActivation == 0)
+	if (GetSrc(neurons_ref)->currentActivation == 0)
 	{
 		return;
 	}
@@ -65,13 +65,13 @@ void SimpleC::BackProp()
 	//derivative of sum = src activation * weight
 	weight -= backWeight * ( 
 		//dy (this is actually the intermediate du but whatever
-		SignalDerivative(GetDst()->nextActivation)
+		SignalDerivative(GetDst(neurons_ref)->nextActivation)
 		//divided by dx
-		/ (GetSrc()->currentActivation * weight));
+		/ (GetSrc(neurons_ref)->currentActivation * weight));
 	return;
 }
 
-void HardwiredC::BackProp()
+void HardwiredC::BackProp(std::vector<Neuron*>* neurons_ref)
 {
 	return;
 }

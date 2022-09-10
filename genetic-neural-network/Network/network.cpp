@@ -27,10 +27,10 @@ Network::Network(Genes* genes)
 		Gene* currentGene = &genes->genes[i];
 		switch (currentGene->mode) {
 		case CType::Simple:
-			newc_ptr = new SimpleC(currentGene, &neurons);
+			newc_ptr = new SimpleC(currentGene);
 			break;
 		case CType::Hardwired:
-			newc_ptr = new HardwiredC(currentGene, &neurons);
+			newc_ptr = new HardwiredC(currentGene);
 			break;
 		default:
 			newc_ptr = nullptr;
@@ -62,12 +62,12 @@ void Network::Propagate()
 	//Forward propagate
 	for (auto it : connections)
 	{
-		it->Propagate();
+		it->Propagate(&neurons);
 	}
 	//Back propagate
 	for (auto it : connections)
 	{
-		it->BackProp();
+		it->BackProp(&neurons);
 	}
 	//Push neurons cached activation
 	for (auto it : neurons)

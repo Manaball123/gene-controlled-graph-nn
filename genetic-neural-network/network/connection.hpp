@@ -18,18 +18,20 @@ namespace NN
 		weight_t weight;
 
 		//Reference to neurons table in thet network
-		std::vector<Neuron*>* neurons_ref;
+		//std::vector<Neuron*>* neurons_ref;
+		//-8 bytes per connection which brings the grand total to 16/24! yipee :D
+		//+8 bytes for stack frame doe :(
 
 		//Get neuron from table
-		Connection(Gene* gene, std::vector<Neuron*>* neurons_ref);
-		Neuron* GetN(uint index);
-		Neuron* GetSrc();
+		Connection(Gene* gene);
+		Neuron* GetN(std::vector<Neuron*>* neurons_ref, uint index);
+		Neuron* GetSrc(std::vector<Neuron*>* neurons_ref);
 
-		Neuron* GetDst();
+		Neuron* GetDst(std::vector<Neuron*>* neurons_ref);
 
-		void Propagate();
+		void Propagate(std::vector<Neuron*>* neurons_ref);
 
-		virtual void BackProp();
+		virtual void BackProp(std::vector<Neuron*>* neurons_ref);
 	};
 
 
@@ -41,17 +43,17 @@ namespace NN
 
 		weight_t backWeight;
 
-		SimpleC(Gene* gene, std::vector<Neuron*>* neuronsRef);
-		void BackProp();
+		SimpleC(Gene* gene);
+		void BackProp(std::vector<Neuron*>* neurons_ref);
 	};
 
 
 	class HardwiredC : public Connection
 	{
 	public:
-		void BackProp();
+		void BackProp(std::vector<Neuron*>* neurons_ref);
 
-		HardwiredC(Gene* gene, std::vector<Neuron*>* neuronsRef);
+		HardwiredC(Gene* gene);
 
 	};
 }

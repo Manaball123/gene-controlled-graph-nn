@@ -137,6 +137,7 @@
     <ClCompile Include="utils\network_visualization.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="derived_map.hpp" />
     <ClInclude Include="network\connection.hpp" />
     <ClInclude Include="Network\genes.hpp" />
     <ClInclude Include="Network\network_defs.hpp" />

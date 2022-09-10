@@ -79,5 +79,8 @@
     <ClInclude Include="utils\matrix.hpp">
       <Filter>include\utils</Filter>
     </ClInclude>
+    <ClInclude Include="derived_map.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
