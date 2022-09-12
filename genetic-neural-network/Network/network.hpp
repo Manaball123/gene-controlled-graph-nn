@@ -6,7 +6,7 @@
 #include "genes.hpp"
 #include "neuron.hpp"
 #include <vector>
-
+#include "../utils/nn_pool_allocator.hpp"
 
 
 
@@ -19,6 +19,10 @@ namespace NN
 		
 		std::vector<Connection*> connections;
 		std::vector<Neuron*> neurons;
+
+		MemPoolAllocator<Neuron> neuronsMemPool;
+		MemPoolAllocator<Connection> connectionsMemPool;
+
 
 		//call on network creation
 		//Resizes the vectors and initializes neurons

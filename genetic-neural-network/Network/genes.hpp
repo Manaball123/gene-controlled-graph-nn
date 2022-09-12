@@ -46,6 +46,7 @@ namespace NN
 	class Genes
 	{
 	public:
+
 		//Genes header, do not mutate
 		//Total number of neurons
 		static const uint neuronN;
@@ -59,8 +60,16 @@ namespace NN
 		//ir range: 0-1
 		//or range: 7-9
 
+		std::vector<size_t> connectionTypes;
+		//use this when more neuron derived classes are implemented
+		//std::vector<size_t> neuronsTypes;
+
+		Genes();
+
 		void Init();
 		void Mutate();
+		void CountTypes();
+		size_t GetSize();
 		Gene genes[GENES_SIZE];
 		
 

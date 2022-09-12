@@ -37,6 +37,7 @@
 //Other network defs
 #define NEURONS_SIZE 256
 #define CONNECTIONS_SIZE GENES_SIZE
+#define CTYPE_COUNT 2
 
 namespace NN
 {

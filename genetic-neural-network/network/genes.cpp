@@ -8,7 +8,7 @@ using namespace NN;
 void Gene::RandMode()
 {
 	//only 2 modes currently
-	this->mode = rand() % 2;
+	this->mode = rand() % CTYPE_COUNT;
 }
 
 void Gene::RandSrc()
@@ -76,7 +76,6 @@ void Gene::Mutate()
 	if (DoMutation(PROB_WGT_RAND))
 	{
 		this->RandWeight(MUTATE_WEIGHT_OFFSET, this->weight);
-
 	}
 
 	if (DoMutation(PROB_WGT_RAND))
@@ -87,13 +86,33 @@ void Gene::Mutate()
 
 }
 
+//Initialize vector on creation
+Genes::Genes()
+{
+	connectionTypes.resize(CTYPE_COUNT);
+}
 //randomly initialize genes
 void Genes::Init()
 {
 	for (uint i = 0; i < GENES_SIZE; i++)
 	{
 		genes[i] = Gene();
+
 	}
+}
+
+void Genes::CountTypes()
+{
+	for (uint i = 0; i < GENES_SIZE; i++)
+	{
+		genes[i].mode = 0;
+
+	}
+}
+
+size_t Genes::GetSize(std::vector<size_t> sizeTable)
+{
+
 }
 
 void Genes::Mutate()
