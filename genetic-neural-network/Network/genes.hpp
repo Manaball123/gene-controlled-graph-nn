@@ -69,6 +69,7 @@ namespace NN
 		void Init();
 		void Mutate();
 		void CountTypes();
+		void GetCTable(std::vector<size_t>* sizeTable);
 		size_t GetSize();
 		Gene genes[GENES_SIZE];
 		

@@ -1,4 +1,5 @@
 #include "genes.hpp"
+#include "connection.hpp"
 
 
 using namespace NN;
@@ -110,9 +111,28 @@ void Genes::CountTypes()
 	}
 }
 
-size_t Genes::GetSize(std::vector<size_t> sizeTable)
+void Genes::GetCTable(std::vector<size_t>* sizeTable)
 {
+	
+	sizeTable->resize(CTYPE_COUNT);
 
+	for (uint i = 0; i < GENES_SIZE; i++)
+	{
+		sizeTable->at(this->genes[i].mode)++;
+	}
+		
+}
+
+size_t Genes::GetSize()
+{
+	std::vector<size_t> sTable;
+	size_t counter = 0;
+	GetCTable(&sTable);
+	for (size_t i = 0; i < sTable.size(); i++)
+	{
+		counter += (sTable[i] * CSIZE_TABLE[i]);
+	}
+	return counter;
 }
 
 void Genes::Mutate()

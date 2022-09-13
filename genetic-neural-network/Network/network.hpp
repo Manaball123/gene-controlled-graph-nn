@@ -20,8 +20,8 @@ namespace NN
 		std::vector<Connection*> connections;
 		std::vector<Neuron*> neurons;
 
-		MemPoolAllocator<Neuron> neuronsMemPool;
-		MemPoolAllocator<Connection> connectionsMemPool;
+		MemPoolAllocator neuronsMemPool;
+		MemPoolAllocator connectionsMemPool;
 
 
 		//call on network creation
@@ -31,18 +31,16 @@ namespace NN
 		{
 			connections.resize(CONNECTIONS_SIZE);
 			neurons.resize(NEURONS_SIZE);
-			for (uint i = 0; i < neurons.size(); i++)
-			{
-				neurons[i] = new Neuron();
-			}
 
 		}
 		
 		Network();
 		~Network();
+		
 
 
-		Network(Genes*);
+		Network(Genes* genes);
+		void Init(Genes* genes);
 
 		//~Network();
 

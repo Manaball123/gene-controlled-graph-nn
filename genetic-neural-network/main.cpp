@@ -16,17 +16,20 @@ using namespace NNVis;
 
 void memleakTest()
 {
+    std::cout << "hi\n";
     Network nets[100];
     for (int i = 0; i < 100; i++)
     {
         Genes* genes = new Genes();
-        nets[i] = Network(genes);
+        nets[i].Init(genes);
         delete genes;
+
 
 
     };
 
-    std::cin.get();
+
+   // std::cin.get();
 }
 
 int main()
@@ -42,10 +45,12 @@ int main()
     bool activate = 0;
 
     memleakTest();
+
+
     while (1)
     {
 
-        std::cin.get();
+        //std::cin.get();
         if (activate)
         {
             activate = 0;

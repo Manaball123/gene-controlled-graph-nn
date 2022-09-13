@@ -56,4 +56,15 @@ namespace NN
 		HardwiredC(Gene* gene);
 
 	};
+
+
+
+	//Connection sizes
+	const size_t CSIZE_TABLE[]
+	{
+
+		sizeof(SimpleC),
+		sizeof(HardwiredC)
+
+	};
 }

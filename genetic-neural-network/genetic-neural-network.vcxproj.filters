@@ -82,5 +82,8 @@
     <ClInclude Include="derived_map.hpp">
       <Filter>include\utils</Filter>
     </ClInclude>
+    <ClInclude Include="utils\nn_pool_allocator.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
