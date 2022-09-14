@@ -35,6 +35,7 @@ void Network::Init(Genes* genes)
 		*neurons[i] = Neuron();
 
 	}
+
 	//Create connections
 	for (uint i = 0; i < CONNECTIONS_SIZE; i++)
 	{
@@ -42,17 +43,23 @@ void Network::Init(Genes* genes)
 		//Create a connection for each gene
 		Gene* currentGene = &genes->genes[i];
 		Connection* rawMemPtr = static_cast<Connection*>(connectionsMemPool.New(CSIZE_TABLE[currentGene->mode]));
+		
 		switch (currentGene->mode) {
 		case CType::Simple:
-			newc_ptr = static_cast<SimpleC*>(rawMemPtr);
+			newc_ptr =	dynamic_cast<SimpleC*>(rawMemPtr);
+			*newc_ptr = SimpleC(currentGene);
+			
 			
 			break;
 		case CType::Hardwired:
-			newc_ptr = static_cast<HardwiredC*>(rawMemPtr);
+			newc_ptr = dynamic_cast<HardwiredC*>(rawMemPtr);
+			*newc_ptr = HardwiredC(currentGene);
 			break;
 		default:
 			newc_ptr = nullptr;
 		}
+
+		
 		connections[i] = newc_ptr;
 		
 		

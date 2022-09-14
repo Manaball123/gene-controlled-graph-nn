@@ -69,7 +69,8 @@ namespace NN
 			void* newMem = (pool + currentOffset);
 			currentOffset += elementSize * elementNum;
 
-			if (currentOffset > size) {
+			if (currentOffset > size) 
+			{
 				throw std::bad_alloc();
 				return nullptr;
 			}
