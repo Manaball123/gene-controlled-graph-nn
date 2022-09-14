@@ -24,7 +24,7 @@ void Network::Init(Genes* genes)
 
 	connectionsMemPool.Reallocate(genes->GetSize());
 	neuronsMemPool.Reallocate(NEURONS_SIZE * sizeof(Neuron));
-
+	
 	InitializeVectors();
 	//expand vectors first
 	
@@ -37,30 +37,34 @@ void Network::Init(Genes* genes)
 	}
 
 	//Create connections
+	Connection* temp_ptr;
 	for (uint i = 0; i < CONNECTIONS_SIZE; i++)
 	{
 		Connection* newc_ptr;
 		//Create a connection for each gene
 		Gene* currentGene = &genes->genes[i];
-		Connection* rawMemPtr = static_cast<Connection*>(connectionsMemPool.New(CSIZE_TABLE[currentGene->mode]));
+		void* rawMemPtr = connectionsMemPool.New(CSIZE_TABLE[currentGene->mode]);
 		
 		switch (currentGene->mode) {
 		case CType::Simple:
-			newc_ptr =	dynamic_cast<SimpleC*>(rawMemPtr);
-			*newc_ptr = SimpleC(currentGene);
+			newc_ptr = reinterpret_cast<SimpleC*>(rawMemPtr);
+			temp_ptr = new SimpleC(currentGene);
 			
 			
 			break;
 		case CType::Hardwired:
-			newc_ptr = dynamic_cast<HardwiredC*>(rawMemPtr);
-			*newc_ptr = HardwiredC(currentGene);
+			newc_ptr = reinterpret_cast<HardwiredC*>(rawMemPtr);
+			temp_ptr = new HardwiredC(currentGene);
+			
 			break;
 		default:
 			newc_ptr = nullptr;
+			temp_ptr = nullptr;
 		}
 
-		
+		memcpy(newc_ptr, temp_ptr, CSIZE_TABLE[currentGene->mode]);
 		connections[i] = newc_ptr;
+		delete temp_ptr;
 		
 		
 	}

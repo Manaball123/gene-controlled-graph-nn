@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-/*
+
 //Gene definitions
 #define GENES_SIZE 16384
 
@@ -40,35 +40,6 @@
 #define CONNECTIONS_SIZE GENES_SIZE
 #define CTYPE_COUNT 2
 
-*/
-
-//Gene definitions
-#define GENES_SIZE 10
-
-#define INPUT_NEURONS 1
-#define OUTPUT_NEURONS 1
-
-#define INIT_WEIGHT_OFFSET 1.0
-#define MUTATE_WEIGHT_OFFSET 0.2
-//probability of mode randomization
-#define PROB_MODE_RAND 1/10000
-//probability of address randomization
-#define PROB_ADDR_RAND 1/1000
-//probability of weight randomization
-#define PROB_WGT_RAND 1/10
-
-
-
-//min multiplier
-//0.25-> currentweight * 0.75 ~ 1.25
-#define MIN_MULT_RANGE 0.1
-#define MAX_MULT_RANGE 2
-
-
-//Other network defs
-#define NEURONS_SIZE 5
-#define CONNECTIONS_SIZE GENES_SIZE
-#define CTYPE_COUNT 2
 
 namespace NN
 {

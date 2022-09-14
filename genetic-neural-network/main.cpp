@@ -29,7 +29,7 @@ void memleakTest()
     };
 
 
-   // std::cin.get();
+   std::cin.get();
 }
 
 int main()
@@ -50,7 +50,7 @@ int main()
     while (1)
     {
 
-        //std::cin.get();
+        std::cin.get();
         if (activate)
         {
             activate = 0;
