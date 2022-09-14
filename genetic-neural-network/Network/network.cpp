@@ -14,7 +14,7 @@ using namespace NN;
 Network::Network()
 {
 
-	InitializeVectors();
+	//InitializeVectors();
 
 };
 
@@ -38,6 +38,7 @@ void Network::Init(Genes* genes)
 
 	//Create connections
 	Connection* temp_ptr;
+
 	for (uint i = 0; i < CONNECTIONS_SIZE; i++)
 	{
 		Connection* newc_ptr;
@@ -56,18 +57,21 @@ void Network::Init(Genes* genes)
 			newc_ptr = reinterpret_cast<HardwiredC*>(rawMemPtr);
 			temp_ptr = new HardwiredC(currentGene);
 			
+			
 			break;
 		default:
 			newc_ptr = nullptr;
 			temp_ptr = nullptr;
 		}
-
+		//temp_ptr = nullptr;
 		memcpy(newc_ptr, temp_ptr, CSIZE_TABLE[currentGene->mode]);
 		connections[i] = newc_ptr;
 		delete temp_ptr;
 		
 		
 	}
+
+
 }
 
 Network::Network(Genes* genes)

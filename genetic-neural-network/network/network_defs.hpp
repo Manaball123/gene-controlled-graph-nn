@@ -60,11 +60,16 @@ namespace NN
 	using activation_t = double;
 	using weight_t = double;
 
-	
+	//random wrapper 
+	inline int randint()
+	{
+		srand(1);
+		return rand();
+	}
 	template<class dtype> 
 	dtype RandVal(dtype min, dtype max)
 	{
-		return (((dtype)rand() / (dtype)RAND_MAX) * (max - min)) + min;
+		return ((static_cast<dtype>(randint()) / static_cast<dtype>(RAND_MAX)) * (max - min)) + min;
 	}
 
 	inline activation_t Signal(activation_t activation)

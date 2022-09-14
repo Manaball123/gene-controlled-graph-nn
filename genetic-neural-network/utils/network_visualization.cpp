@@ -12,6 +12,7 @@ NetworkVisualizer::NetworkVisualizer(NN::Network* network_ptr)
 	renderer = CLIRenderer::CRenderer(sqrtSize, sqrtSize);
 }
 
+
 void NetworkVisualizer::Render()
 {
 	std::vector <NN::Neuron*>* neurons_ref = &network_ptr->neurons;

@@ -137,7 +137,6 @@
     <ClCompile Include="utils\network_visualization.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="derived_map.hpp" />
     <ClInclude Include="network\connection.hpp" />
     <ClInclude Include="Network\genes.hpp" />
     <ClInclude Include="Network\network_defs.hpp" />
@@ -148,6 +147,7 @@
     <ClInclude Include="utils\network_visualization.hpp" />
     <ClInclude Include="utils\nn_pool_allocator.hpp" />
     <ClInclude Include="Utils\typedefs.hpp" />
+    <ClInclude Include="world.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

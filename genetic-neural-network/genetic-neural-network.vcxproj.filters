@@ -79,11 +79,11 @@
     <ClInclude Include="utils\matrix.hpp">
       <Filter>include\utils</Filter>
     </ClInclude>
-    <ClInclude Include="derived_map.hpp">
-      <Filter>include\utils</Filter>
-    </ClInclude>
     <ClInclude Include="utils\nn_pool_allocator.hpp">
       <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="world.hpp">
+      <Filter>include\simulation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

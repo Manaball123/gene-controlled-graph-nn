@@ -48,10 +48,7 @@ namespace NN
 		//Create block of new memory, frees the previous
 		void Reallocate(size_t poolSize)
 		{
-			if (pool != nullptr)
-			{
-				delete[] pool;
-			}
+			delete[] pool;
 			pool = new char[poolSize];
 			currentOffset = 0;
 			size = poolSize;

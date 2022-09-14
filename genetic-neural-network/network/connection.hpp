@@ -54,6 +54,7 @@ namespace NN
 		void BackProp(std::vector<Neuron*>* neurons_ref);
 
 		HardwiredC(Gene* gene);
+		//HardwiredC();
 
 	};
 
@@ -67,4 +68,5 @@ namespace NN
 		sizeof(HardwiredC)
 
 	};
+
 }
