@@ -32,6 +32,9 @@ namespace NN
 		void Propagate(std::vector<Neuron*>* neurons_ref);
 
 		virtual void BackProp(std::vector<Neuron*>* neurons_ref);
+
+		Connection& operator=(Connection& c);
+		virtual size_t GetSize();
 	};
 
 
@@ -45,6 +48,7 @@ namespace NN
 
 		SimpleC(Gene* gene);
 		void BackProp(std::vector<Neuron*>* neurons_ref);
+		size_t GetSize();
 	};
 
 
@@ -54,6 +58,7 @@ namespace NN
 		void BackProp(std::vector<Neuron*>* neurons_ref);
 
 		HardwiredC(Gene* gene);
+		size_t GetSize();
 		//HardwiredC();
 
 	};

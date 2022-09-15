@@ -40,9 +40,24 @@ void Connection::Propagate(std::vector<Neuron*>* neurons_ref)
 	GetDst(neurons_ref)->nextActivation += GetSrc(neurons_ref)->currentActivation * weight;
 };
 
+Connection& Connection::operator=(Connection& c) 
+{
+	memcpy(this, &c, c.GetSize());
+	return *this;
+}
+
+size_t Connection::GetSize()
+{
+	return sizeof(Connection);
+}
 SimpleC::SimpleC(Gene* gene) : Connection(gene)
 {
 	backWeight = gene->backWeight;
+}
+
+size_t SimpleC::GetSize()
+{
+	return sizeof(SimpleC);
 }
 
 HardwiredC::HardwiredC(Gene* gene) : Connection(gene)
@@ -71,6 +86,11 @@ void SimpleC::BackProp(std::vector<Neuron*>* neurons_ref)
 	return;
 }
 
+
+size_t HardwiredC::GetSize()
+{
+	return sizeof(HardwiredC);
+}
 void HardwiredC::BackProp(std::vector<Neuron*>* neurons_ref)
 {
 	return;
