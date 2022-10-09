@@ -42,6 +42,9 @@ namespace NN
 		Network(Genes* genes);
 		void Init(Genes* genes);
 
+
+		void ResetActivations();
+
 		//~Network();
 
 		//Does a forward and backwards propagation for all connections and pushes the cached activations

@@ -60,10 +60,12 @@ void Network::Init(Genes* genes)
 			
 			break;
 		default:
+			//This should never happen
 			newc_ptr = nullptr;
 			temp_ptr = nullptr;
 		}
 		//temp_ptr = nullptr;
+
 		memcpy(newc_ptr, temp_ptr, CSIZE_TABLE[currentGene->mode]);
 		connections[i] = newc_ptr;
 		delete temp_ptr;
@@ -72,6 +74,16 @@ void Network::Init(Genes* genes)
 	}
 
 
+}
+
+
+void Network::ResetActivations()
+{
+	for (auto it : neurons)
+	{
+		it->currentActivation = 0.0;
+		it->nextActivation = 0.0;
+	}
 }
 
 Network::Network(Genes* genes)

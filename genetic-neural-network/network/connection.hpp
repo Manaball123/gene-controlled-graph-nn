@@ -33,7 +33,7 @@ namespace NN
 
 		virtual void BackProp(std::vector<Neuron*>* neurons_ref);
 
-		Connection& operator=(Connection& c);
+		//Connection& operator=(Connection& c);
 		virtual size_t GetSize();
 	};
 

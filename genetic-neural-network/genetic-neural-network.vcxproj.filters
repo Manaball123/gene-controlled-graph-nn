@@ -50,6 +50,15 @@
     <ClCompile Include="utils\console_renderer.cpp">
       <Filter>src\utils</Filter>
     </ClCompile>
+    <ClCompile Include="simulation\world.cpp">
+      <Filter>src\simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation\element.cpp">
+      <Filter>src\simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation\entity.cpp">
+      <Filter>src\simulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils\console_renderer.hpp">
@@ -60,9 +69,6 @@
     </ClInclude>
     <ClInclude Include="Utils\typedefs.hpp">
       <Filter>include\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="network\neuron.hpp">
-      <Filter>include\network</Filter>
     </ClInclude>
     <ClInclude Include="Network\network_defs.hpp">
       <Filter>include\network</Filter>
@@ -82,7 +88,22 @@
     <ClInclude Include="utils\nn_pool_allocator.hpp">
       <Filter>include\utils</Filter>
     </ClInclude>
-    <ClInclude Include="world.hpp">
+    <ClInclude Include="simulation\world.hpp">
+      <Filter>include\simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation\element.hpp">
+      <Filter>include\simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="network\neuron.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vector.hpp">
+      <Filter>include\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation\entity.hpp">
+      <Filter>include\simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation\sim_defs.hpp">
       <Filter>include\simulation</Filter>
     </ClInclude>
   </ItemGroup>

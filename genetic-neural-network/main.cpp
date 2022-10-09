@@ -44,7 +44,7 @@ int main()
     Genes* genes = new Genes();
     _crtBreakAlloc = 155;
 
-    //Network net1 = Network(genes);
+    Network net1 = Network(genes);
     
     //NetworkVisualizer v1(&net1);
     //net1.neurons[0]->currentActivation = 1.0;

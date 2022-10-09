@@ -133,6 +133,9 @@
     <ClCompile Include="Network\genes.cpp" />
     <ClCompile Include="Network\network.cpp" />
     <ClCompile Include="network\neuron.cpp" />
+    <ClCompile Include="simulation\element.cpp" />
+    <ClCompile Include="simulation\entity.cpp" />
+    <ClCompile Include="simulation\world.cpp" />
     <ClCompile Include="utils\console_renderer.cpp" />
     <ClCompile Include="utils\network_visualization.cpp" />
   </ItemGroup>
@@ -142,12 +145,16 @@
     <ClInclude Include="Network\network_defs.hpp" />
     <ClInclude Include="Network\network.hpp" />
     <ClInclude Include="network\neuron.hpp" />
+    <ClInclude Include="simulation\element.hpp" />
+    <ClInclude Include="simulation\entity.hpp" />
+    <ClInclude Include="simulation\sim_defs.hpp" />
+    <ClInclude Include="simulation\world.hpp" />
     <ClInclude Include="utils\console_renderer.hpp" />
     <ClInclude Include="utils\matrix.hpp" />
     <ClInclude Include="utils\network_visualization.hpp" />
     <ClInclude Include="utils\nn_pool_allocator.hpp" />
     <ClInclude Include="Utils\typedefs.hpp" />
-    <ClInclude Include="world.hpp" />
+    <ClInclude Include="utils\vector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
