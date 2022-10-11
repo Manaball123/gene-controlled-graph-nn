@@ -10,12 +10,13 @@
 
 #include <stdlib.h>
 #include <math.h>
+//#include <vector>
 
 
 //Gene definitions
 #define GENES_SIZE 16384
 
-#define INPUT_NEURONS 8
+#define INPUT_NEURONS 9
 #define OUTPUT_NEURONS 5
 
 #define INIT_WEIGHT_OFFSET 1.0
@@ -59,6 +60,9 @@ namespace NN
 	//Data type used for activation
 	using activation_t = double;
 	using weight_t = double;
+
+
+	//using NeuronsVec = std::vector<Neuron*>;
 
 	//random wrapper 
 	inline int randint()

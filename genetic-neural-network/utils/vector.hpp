@@ -1,8 +1,8 @@
-
+#pragma once
 #include "typedefs.hpp"
 namespace Vector
 {
-	export
+
 	template<class dtype>
 	class Vector2
 	{
@@ -74,6 +74,11 @@ namespace Vector
 			return this->x * v.x + this->y * v.y;
 
 		};
+
+		Vector2<dtype> operator=(Vector2<dtype>& v)
+		{
+			return *this;
+		}
 		dtype Dot(Vector2<dtype> v)
 		{
 			return this->x * v.x + this->y * v.y;
@@ -112,7 +117,7 @@ namespace Vector
 
 	};
 	//export alisases
-	export {
+
 		using Vector2F = Vector::Vector2<float>;
 		using Vectro2D = Vector::Vector2<double>;
 
@@ -124,7 +129,7 @@ namespace Vector
 
 		using Vector2L = Vector::Vector2<int64>;
 		using Vector2UL = Vector::Vector2<uint64>;
-	}
+	
 
 
 

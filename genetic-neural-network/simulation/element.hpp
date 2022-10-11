@@ -1,5 +1,5 @@
 #pragma once
-#include "../network/network.hpp"
+//#include "../network/network.hpp"
 
 
 
@@ -12,39 +12,37 @@ namespace SIM
 		~Element();
 
 
+	public:
 		virtual void Use();
 		virtual void Attack();
 		virtual void Break();
+		virtual bool IsSolid();
+
 		static uint64 properties;
 	};
 
-	class SolidBlock : public Element
+	class SolidElement : public Element
 	{
+		inline bool IsSolid()
+		{
+			return true;
+		}
 		inline void Use() {};
 		inline void Attack() {};
 		inline void Break() {};
 
 	};
-
-
-
-	class Creature : public Element
+	//Can be passed through by entities
+	class NonsolidElement : public Element
 	{
-
-		float health = 100.0;
-
-		NN::Network* network;
-
-		NN::Gene* gene;
-
-
-
-
-		
-
-		
-
+		inline bool IsSolid()
+		{
+			return false;
+		}
 	};
+
+
+
 
 
 }

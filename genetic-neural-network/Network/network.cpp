@@ -119,3 +119,22 @@ void Network::Propagate()
 }
 
 
+//returns relative index of choice with biggest weight
+int Network::GetDecision()
+{
+	activation_t rec = -1;
+	int reci = -1;
+	for (int i = NEURONS_SIZE - OUTPUT_NEURONS; i < NEURONS_SIZE; i++)
+	{
+		activation_t ca = neurons[i]->currentActivation;
+		if (ca > rec)
+		{
+			rec = ca;
+			reci = i;
+		}
+	}
+	reci = reci - NEURONS_SIZE + OUTPUT_NEURONS;
+	return reci;
+}
+
+

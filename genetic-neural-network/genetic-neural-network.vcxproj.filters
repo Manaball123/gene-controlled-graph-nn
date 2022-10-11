@@ -85,7 +85,7 @@
     <ClInclude Include="utils\matrix.hpp">
       <Filter>include\utils</Filter>
     </ClInclude>
-    <ClInclude Include="utils\nn_pool_allocator.hpp">
+    <ClInclude Include="utils\allocators.hpp">
       <Filter>include\utils</Filter>
     </ClInclude>
     <ClInclude Include="simulation\world.hpp">
@@ -93,9 +93,6 @@
     </ClInclude>
     <ClInclude Include="simulation\element.hpp">
       <Filter>include\simulation</Filter>
-    </ClInclude>
-    <ClInclude Include="network\neuron.hpp">
-      <Filter>include\utils</Filter>
     </ClInclude>
     <ClInclude Include="utils\vector.hpp">
       <Filter>include\utils</Filter>
@@ -105,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="simulation\sim_defs.hpp">
       <Filter>include\simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="network\neuron.hpp">
+      <Filter>include\network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

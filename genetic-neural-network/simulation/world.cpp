@@ -1,20 +1,17 @@
 #pragma once
+#include "world.hpp"
 
-#include "../utils/matrix.hpp"
-#include "element.hpp"
-#include <vector>
-#include "entity.hpp"
-namespace SIM
+
+
+using namespace SIM;
+
+
+
+void World::Tick()
 {
-
-	class World
+	//iterate through all entities
+	for (size_t i = 0; i < entities.size(); i++)
 	{
-		Matrix::Matrix2<Element*> world;
-		std::vector<Entity*> entities;
-
-		World();
-		~World();
-		
-
-	};
+		entities[i]->Tick();
+	}
 }

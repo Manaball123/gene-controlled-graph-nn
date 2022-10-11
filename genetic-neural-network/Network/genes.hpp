@@ -1,7 +1,7 @@
 #pragma once
 
-#include <cstdlib>;
-#include <random>;
+#include <cstdlib>
+#include <random>
 #include "../Utils/typedefs.hpp"
 #include "network_defs.hpp"
 

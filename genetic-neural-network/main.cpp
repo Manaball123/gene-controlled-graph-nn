@@ -51,13 +51,16 @@ int main()
     //net1.neurons[32]->currentActivation = 1.0;
     bool activate = 0;
 
-    for (uint i = 0; i < 3; i++)
+    for (uint i = 0; i < 1; i++)
     {
         std::cout << i << std::endl;
         memleakTest();
     }
+
     //net1.~Network();
-    //delete genes;
+    delete genes;
+
+
     _CrtDumpMemoryLeaks();
 
    

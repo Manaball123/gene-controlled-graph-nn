@@ -5,12 +5,12 @@
 
 
 
-namespace NN
+namespace Allocators
 {
 	//alloactor made specifically for my project :D
 	//
 
-	class MemPoolAllocator
+	class Pool
 	{
 		
 		//Determined upon object creation, should not be modified after initialization
@@ -25,7 +25,7 @@ namespace NN
 		
 
 		//RAW BYTE SIZE of pool
-		MemPoolAllocator(size_t poolSize)
+		Pool(size_t poolSize)
 		{
 			pool = new char[poolSize];
 			currentOffset = 0;
@@ -33,14 +33,14 @@ namespace NN
 
 		}
 		
-		MemPoolAllocator()
+		Pool()
 		{
 			pool = nullptr;
 			currentOffset = 0;
 			size = 0;
 		}
 		
-		~MemPoolAllocator()
+		~Pool()
 		{
 			//freed = 1;
 			delete[] pool;
